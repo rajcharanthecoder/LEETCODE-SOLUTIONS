@@ -8,22 +8,17 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+//Approach2//
 class Solution {
 public:
-    ListNode* middleNode(ListNode* head) {
-        int n = 0;
-        ListNode*temp = head;
-        //Size Of Linked List//
-        while(temp!=NULL){
-            n++;
-            temp = temp->next;
+    ListNode* middleNode(ListNode* head){
+        ListNode*slow,*fast;
+        slow=fast=head;
+        //U are Fast And slow is your friend//
+        while(fast!=NULL && fast->next!=NULL){
+             slow=slow->next;
+              fast = fast->next->next;
         }
-        int half = n/2;//Loop This much times from head to reach mid babe//
-        temp = head;
-        while(half--){
-            temp = temp->next; 
-        }
-        return temp;
-
+        return slow;
     }
 };
