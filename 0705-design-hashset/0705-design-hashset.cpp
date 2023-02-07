@@ -24,7 +24,7 @@ public:
     vector<list<int>>m;
     int size;
     MyHashSet() {
-        size = 1000;
+        size = 1000000;
         m.resize(size);
     }
     int hash(int key){
